@@ -1,0 +1,6 @@
+C:\Users\diego\Desktop\TP2 Analisis Numerico\TP2 Analisis Numerico\Logica\bin\Debug\Logica.dll
+C:\Users\diego\Desktop\TP2 Analisis Numerico\TP2 Analisis Numerico\Logica\bin\Debug\Logica.pdb
+C:\Users\diego\Desktop\TP2 Analisis Numerico\TP2 Analisis Numerico\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\Users\diego\Desktop\TP2 Analisis Numerico\TP2 Analisis Numerico\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\diego\Desktop\TP2 Analisis Numerico\TP2 Analisis Numerico\Logica\obj\Debug\Logica.dll
+C:\Users\diego\Desktop\TP2 Analisis Numerico\TP2 Analisis Numerico\Logica\obj\Debug\Logica.pdb
