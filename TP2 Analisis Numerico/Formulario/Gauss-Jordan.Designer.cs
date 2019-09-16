@@ -38,7 +38,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(35, 78);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(387, 309);
+            this.panel1.Size = new System.Drawing.Size(530, 309);
             this.panel1.TabIndex = 6;
             // 
             // textBox1
@@ -52,7 +52,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(156, 34);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(266, 23);
+            this.button1.Size = new System.Drawing.Size(409, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "Generar";
             this.button1.UseVisualStyleBackColor = true;
@@ -60,18 +60,19 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(182, 420);
+            this.button2.Location = new System.Drawing.Point(263, 419);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
             this.button2.Text = "Cargar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Gauss_Jordan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 471);
+            this.ClientSize = new System.Drawing.Size(623, 471);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
