@@ -11,13 +11,12 @@ using Logica;
 
 namespace Formulario
 {
-    public partial class Gauss_Jordan : Form
+    public partial class Gauss_Seidel : Form
     {
-
-        public Gauss_Jordan(Matriz matriz)
+        public Gauss_Seidel(Matriz matriz)
         {
             InitializeComponent();
-            CompletarDatosMetodo(matriz);                       
+            CompletarDatosMetodo(matriz);
         }
         private void CompletarDatosMetodo(Matriz matriz)
         {
@@ -36,7 +35,6 @@ namespace Formulario
             }
             return variable;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (this.textBox1.Text != "")
@@ -53,16 +51,16 @@ namespace Formulario
                     for (int i = 0; i < num; i++)
                     {
                         TextBox nuevo = new TextBox();
-                        nuevo.Name = Convert.ToString((i + 1) + ( j + 1));
+                        nuevo.Name = Convert.ToString((i + 1) + (j + 1));
                         nuevo.Location = new Point(pointx, pointy);
                         panel1.Controls.Add(nuevo);
                         pointy += 30;
                     }
                     pointx += 110;
                     pointy = 40;
-                    
+
                 }
-                
+
                 pointy = 20;
                 pointx -= 110;
                 Label nuevo2 = new Label();
@@ -73,7 +71,6 @@ namespace Formulario
             }
 
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             bool var = true;
@@ -85,14 +82,14 @@ namespace Formulario
             double[,] matriz1 = new double[numero, numero + 1];
 
             List<TextBox> lista = panel1.Controls.OfType<TextBox>().ToList();
-            
+
             if (VerificarDatosMetodo(lista) == true)
-            {                
+            {
                 for (int i = 0; i < numero + 1; i++)
                 {
                     for (int j = 0; j < numero; j++)
                     {
-                        matriz1[j, i] = Convert.ToDouble(lista.ElementAt(c).Text); 
+                        matriz1[j, i] = Convert.ToDouble(lista.ElementAt(c).Text);
                         c++;
                     }
                 }
@@ -110,9 +107,9 @@ namespace Formulario
                 {
                     string variable = "";
 
-                    char[] vec = new char[5] { 'x', 'y' , 'z' , 't' , 'w' };
+                    char[] vec = new char[5] { 'x', 'y', 'z', 't', 'w' };
 
-                    double[] vector = formularioPrincipal.ObtenerGaussJordan(matriz1, numero);
+                    //double[] vector = formularioPrincipal.ObtenerGaussJordan(matriz1, numero);
 
                     for (int i = 0; i < numero; i++)
                     {

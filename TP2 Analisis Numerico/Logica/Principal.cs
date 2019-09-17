@@ -8,6 +8,7 @@ namespace Logica
 {
     public class Principal
     {
+        //GAUSS-JORDAN
         public double[] ObtenerGaussJordan(double[,] matrizcargada, int incognita)
         {
             double[,] matrizaux = matrizcargada;
@@ -54,5 +55,6 @@ namespace Logica
 
             return Resultado;
         }
+        //GAUSS-SEIDEL
     }
 }

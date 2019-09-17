@@ -32,5 +32,12 @@ namespace Formulario
             nuevo.Owner = this;
             nuevo.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Gauss_Seidel nuevo = new Gauss_Seidel(new Matriz());
+            nuevo.Owner = this;
+            nuevo.ShowDialog();
+        }
     }
 }
