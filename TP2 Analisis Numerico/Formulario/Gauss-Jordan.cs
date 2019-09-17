@@ -14,14 +14,14 @@ namespace Formulario
     public partial class Gauss_Jordan : Form
     {
 
-        public Gauss_Jordan(Matriz matriz)
+        public Gauss_Jordan(int numero)
         {
             InitializeComponent();
-            CompletarDatosMetodo(matriz);                       
+            CompletarDatosMetodo(numero);                       
         }
-        private void CompletarDatosMetodo(Matriz matriz)
+        private void CompletarDatosMetodo(int numero)
         {
-            this.textBox1.Text = Convert.ToString(matriz.CantFilasxColumnas);
+            this.textBox1.Text = Convert.ToString(numero);
         }
         private bool VerificarDatosMetodo(List<TextBox> lista)
         {
@@ -41,10 +41,9 @@ namespace Formulario
         {
             if (this.textBox1.Text != "")
             {
-                Matriz matriz = new Matriz();
-                matriz.CantFilasxColumnas = Convert.ToInt32(this.textBox1.Text);
+                int numero = Convert.ToInt32(this.textBox1.Text);
 
-                int num = matriz.CantFilasxColumnas;
+                int num = numero;
                 int pointx = 30;
                 int pointy = 40;
                 this.panel1.Controls.Clear();

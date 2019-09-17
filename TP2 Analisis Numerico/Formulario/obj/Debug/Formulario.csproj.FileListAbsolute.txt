@@ -41,3 +41,4 @@ C:\Users\diego\Desktop\TP2 Analisis\TP2 Analisis Numerico\Formulario\obj\Debug\F
 C:\Users\diego\Desktop\TP2 Analisis\TP2 Analisis Numerico\Formulario\obj\Debug\Formulario.exe
 C:\Users\diego\Desktop\TP2 Analisis\TP2 Analisis Numerico\Formulario\obj\Debug\Formulario.pdb
 C:\Users\David\Desktop\Tp2-Analisis Numerico\TP2 Analisis Numerico\Formulario\obj\Debug\Formulario.Gauss_Seidel.resources
+C:\Users\diego\Desktop\TP2 Analisis\TP2 Analisis Numerico\Formulario\obj\Debug\Formulario.Gauss_Seidel.resources

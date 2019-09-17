@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -66,12 +66,12 @@
             this.button2.Text = "Cargar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.Location = new System.Drawing.Point(48, 126);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(708, 309);
-            this.panel1.TabIndex = 12;
+            this.panel2.Location = new System.Drawing.Point(48, 126);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(708, 309);
+            this.panel2.TabIndex = 12;
             // 
             // textBox1
             // 
@@ -88,6 +88,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Generar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Gauss_Seidel
             // 
@@ -98,7 +99,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Name = "Gauss_Seidel";
@@ -113,7 +114,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
     }

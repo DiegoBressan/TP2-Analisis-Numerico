@@ -13,14 +13,14 @@ namespace Formulario
 {
     public partial class Gauss_Seidel : Form
     {
-        public Gauss_Seidel(Matriz matriz)
+        public Gauss_Seidel(int numero)
         {
             InitializeComponent();
-            CompletarDatosMetodo(matriz);
+            CompletarDatosMetodo(numero);
         }
-        private void CompletarDatosMetodo(Matriz matriz)
+        private void CompletarDatosMetodo(int numero)
         {
-            this.textBox1.Text = Convert.ToString(matriz.CantFilasxColumnas);
+            this.textBox1.Text = Convert.ToString(numero);
         }
         private bool VerificarDatosMetodo(List<TextBox> lista)
         {
@@ -39,13 +39,12 @@ namespace Formulario
         {
             if (this.textBox1.Text != "")
             {
-                Matriz matriz = new Matriz();
-                matriz.CantFilasxColumnas = Convert.ToInt32(this.textBox1.Text);
+                int numero = Convert.ToInt32(this.textBox1.Text);
 
-                int num = matriz.CantFilasxColumnas;
+                int num = numero;
                 int pointx = 30;
                 int pointy = 40;
-                this.panel1.Controls.Clear();
+                this.panel2.Controls.Clear();
                 for (int j = 0; j < num + 1; j++)
                 {
                     for (int i = 0; i < num; i++)
@@ -53,7 +52,7 @@ namespace Formulario
                         TextBox nuevo = new TextBox();
                         nuevo.Name = Convert.ToString((i + 1) + (j + 1));
                         nuevo.Location = new Point(pointx, pointy);
-                        panel1.Controls.Add(nuevo);
+                        panel2.Controls.Add(nuevo);
                         pointy += 30;
                     }
                     pointx += 110;
@@ -67,10 +66,10 @@ namespace Formulario
                 nuevo2.Text = "Variable Independiente";
                 nuevo2.Width = 200;
                 nuevo2.Location = new Point(pointx, pointy);
-                panel1.Controls.Add(nuevo2);
+                panel2.Controls.Add(nuevo2);
             }
 
-        }
+        }   
         private void button2_Click(object sender, EventArgs e)
         {
             bool var = true;
@@ -81,7 +80,7 @@ namespace Formulario
 
             double[,] matriz1 = new double[numero, numero + 1];
 
-            List<TextBox> lista = panel1.Controls.OfType<TextBox>().ToList();
+            List<TextBox> lista = panel2.Controls.OfType<TextBox>().ToList();
 
             if (VerificarDatosMetodo(lista) == true)
             {
@@ -109,7 +108,7 @@ namespace Formulario
 
                     char[] vec = new char[5] { 'x', 'y', 'z', 't', 'w' };
 
-                    //double[] vector = formularioPrincipal.ObtenerGaussJordan(matriz1, numero);
+                    double[] vector = formularioPrincipal.ObtenerGaussSeidel(matriz1, numero);
 
                     for (int i = 0; i < numero; i++)
                     {
@@ -120,5 +119,7 @@ namespace Formulario
             }
 
         }
+
+        
     }
 }

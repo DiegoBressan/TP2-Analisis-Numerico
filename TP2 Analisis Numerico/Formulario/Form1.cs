@@ -28,16 +28,23 @@ namespace Formulario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Gauss_Jordan nuevo = new Gauss_Jordan(new Matriz());
+            int numero = 0;
+            Gauss_Jordan nuevo = new Gauss_Jordan(numero);
             nuevo.Owner = this;
             nuevo.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Gauss_Seidel nuevo = new Gauss_Seidel(new Matriz());
+            int numero = 0;
+            Gauss_Seidel nuevo = new Gauss_Seidel(numero);
             nuevo.Owner = this;
             nuevo.ShowDialog();
+        }
+
+        public double[] ObtenerGaussSeidel(double[,] matrizcargada, int incognita)
+        {
+            return Principal.ObtenerGaussSeidel(matrizcargada, incognita);
         }
     }
 }

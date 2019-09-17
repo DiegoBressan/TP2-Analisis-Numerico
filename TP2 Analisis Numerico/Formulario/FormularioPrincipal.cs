@@ -11,5 +11,6 @@ namespace Formulario
         //GAUSS-JORDAN
         double[] ObtenerGaussJordan(double[,] matrizcargada, int incognita);
         //GAUSS-SEIDEL
+        double[] ObtenerGaussSeidel(double[,] matrizcargada, int incognita);
     }
 }
