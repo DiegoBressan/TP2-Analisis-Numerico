@@ -80,22 +80,21 @@ namespace Formulario
         {
             bool var = true;
 
-            Matriz matriz = new Matriz();
-            matriz.CantFilasxColumnas = Convert.ToInt32(this.textBox1.Text);
+            int numero = Convert.ToInt32(this.textBox1.Text);
 
             int c = 0;
 
-            int[,] matriz1 = new int[matriz.CantFilasxColumnas, matriz.CantFilasxColumnas + 1];
+            double[,] matriz1 = new double[numero, numero + 1];
 
             List<TextBox> lista = panel1.Controls.OfType<TextBox>().ToList();
             
             if (VerificarDatosMetodo(lista) == true)
             {                
-                for (int i = 0; i < matriz.CantFilasxColumnas + 1; i++)
+                for (int i = 0; i < numero + 1; i++)
                 {
-                    for (int j = 0; j < matriz.CantFilasxColumnas; j++)
+                    for (int j = 0; j < numero; j++)
                     {
-                        matriz1[j, i] = Convert.ToInt32(lista.ElementAt(c).Text); //Convert.ToString(lista.ElementAt(c));
+                        matriz1[j, i] = Convert.ToDouble(lista.ElementAt(c).Text); //Convert.ToString(lista.ElementAt(c));
                         c++;
                     }
                 }
@@ -108,7 +107,11 @@ namespace Formulario
             }
             if (var == true)
             {
-                MessageBox.Show(Convert.ToString(matriz1[1, 1]));
+                FormularioPrincipal formularioPrincipal = this.Owner as FormularioPrincipal;
+                if (formularioPrincipal != null)
+                {
+                    MessageBox.Show(Convert.ToString(formularioPrincipal.ObtenerGaussJordan(matriz1, numero)));
+                }
             }
 
         }

@@ -9,6 +9,6 @@ namespace Formulario
     interface FormularioPrincipal
     {
         //GAUSS-JORDAN
-
+        double[] ObtenerGaussJordan(double[,] matrizcargada, int incognita);
     }
 }
