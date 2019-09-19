@@ -50,9 +50,45 @@ namespace Logica
         {
             double[,] matrizaux = matrizcargada;
             double[] Resultado = new double[incognita];
-            double coeficiente = 0;
+            double[] vector = new double[incognita];
+            double[] vectorant = new double[incognita];
+            double[] vectorecuaciones = new double[incognita];
+            //double coeficiente = 0;
+            bool ban = false;
+            
+            for (int i = 0; i <= incognita - 1; i++)
+            {
+                vector[i] = 1;
+                vectorant[i] = 0;
+            }
+            
+            while (ban == false)
+            {
+                for (int x = 0; x <= incognita - 1; x++)
+                {
+                    vectorecuaciones[x] = matrizaux[x, incognita];
 
-            for (int x = 0; x <= incognita - 1; x++)
+                    for (int y = 0; y <= incognita - 1; y++)
+                    {
+                        if (y != x)
+                        {
+                            vectorecuaciones[x] = vectorecuaciones[x] - (matrizaux[x, y] * vector[y]);
+                        }
+                    }
+
+                    vectorecuaciones[x] = vectorecuaciones[x] / vector[x];
+
+                    vectorant[x] = vector[x];
+                    vector[x] = vectorecuaciones[x];
+                }
+
+                if (vector == vectorant)
+                {
+                    ban = true;
+                }
+            }
+
+            /*for (int x = 0; x <= incognita - 1; x++)
             {
                 coeficiente = matrizcargada[x, x];
 
@@ -76,10 +112,10 @@ namespace Logica
 
             for (int i = 0; i <= incognita - 1; i++)
             {
-                Resultado[i] = matrizaux[i, incognita];
-            }
+                Resultado[i] = vector[i];
+            }*/
 
-            return Resultado;
+            return vector;
         }
     }
 }

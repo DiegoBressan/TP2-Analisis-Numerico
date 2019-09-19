@@ -69,7 +69,8 @@ namespace Formulario
                 panel2.Controls.Add(nuevo2);
             }
 
-        }   
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             bool var = true;
@@ -117,9 +118,6 @@ namespace Formulario
                     MessageBox.Show(variable);
                 }
             }
-
         }
-
-        
     }
 }
