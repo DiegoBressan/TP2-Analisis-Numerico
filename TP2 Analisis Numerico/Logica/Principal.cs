@@ -48,74 +48,32 @@ namespace Logica
         //GAUSS-SEIDEL
         public double[] ObtenerGaussSeidel(double[,] matrizcargada, int incognita)
         {
-            double[,] matrizaux = matrizcargada;
-            double[] Resultado = new double[incognita];
             double[] vector = new double[incognita];
-            double[] vectorant = new double[incognita];
-            double[] vectorecuaciones = new double[incognita];
-            //double coeficiente = 0;
+            double[] resultado = new double[incognita];
             bool ban = false;
+            int cont = 0;
             
-            for (int i = 0; i <= incognita - 1; i++)
+            while (ban == false && cont < 100)
             {
-                vector[i] = 1;
-                vectorant[i] = 0;
-            }
-            
-            while (ban == false)
-            {
-                for (int x = 0; x <= incognita - 1; x++)
+                cont += 1;
+                for (int i = 0; i < incognita; i++)
                 {
-                    vectorecuaciones[x] = matrizaux[x, incognita];
-
-                    for (int y = 0; y <= incognita - 1; y++)
+                    double suma = 0;
+                    for (int j = 0; j < incognita - 1; j++)
                     {
-                        if (y != x)
-                        {
-                            vectorecuaciones[x] = vectorecuaciones[x] - (matrizaux[x, y] * vector[y]);
-                        }
+                        if (j == i) continue;
+                        suma += matrizcargada[i, j] * vector[j];
                     }
-
-                    vectorecuaciones[x] = vectorecuaciones[x] / vector[x];
-
-                    vectorant[x] = vector[x];
-                    vector[x] = vectorecuaciones[x];
+                    vector[i] = (matrizcargada[i, incognita - 1] - suma) / matrizcargada[i, i];
                 }
 
-                if (vector == vectorant)
+                for (int i = 0; i < incognita; i++)
                 {
-                    ban = true;
+                    resultado[i] = vector[i];
                 }
             }
 
-            /*for (int x = 0; x <= incognita - 1; x++)
-            {
-                coeficiente = matrizcargada[x, x];
-
-                for (int y = 0; y <= incognita; y++)
-                {
-                    matrizaux[x, y] = matrizaux[x, y] / coeficiente;
-                }
-
-                for (int z = 0; z <= incognita - 1; z++)
-                {
-                    if (x != z)
-                    {
-                        coeficiente = matrizaux[z, x];
-                        for (int t = 0; t <= incognita; t++)
-                        {
-                            matrizaux[z, t] = matrizcargada[z, t] - (coeficiente * matrizcargada[x, t]);
-                        }
-                    }
-                }
-            }
-
-            for (int i = 0; i <= incognita - 1; i++)
-            {
-                Resultado[i] = vector[i];
-            }*/
-
-            return vector;
+            return resultado;
         }
     }
 }
