@@ -49,28 +49,51 @@ namespace Logica
         public double[] ObtenerGaussSeidel(double[,] matrizcargada, int incognita)
         {
             double[] vector = new double[incognita];
+            double[] vectorant = new double[incognita];
             double[] resultado = new double[incognita];
             bool ban = false;
             int cont = 0;
+            double tolerancia = 0.0001;
             
             while (ban == false && cont < 100)
             {
                 cont += 1;
+
                 for (int i = 0; i < incognita; i++)
                 {
                     double suma = 0;
+                    vectorant[i] = vector[i];
+
                     for (int j = 0; j < incognita - 1; j++)
                     {
                         if (j == i) continue;
                         suma += matrizcargada[i, j] * vector[j];
                     }
+
                     vector[i] = (matrizcargada[i, incognita - 1] - suma) / matrizcargada[i, i];
                 }
 
-                for (int i = 0; i < incognita; i++)
+                ban = true;
+
+                for (int i = 0; i < incognita - 1; i++)
                 {
-                    resultado[i] = vector[i];
+                    double resta = vector[i] - vectorant[i];
+
+                    if (resta < 0)
+                    {
+                        resta = resta * -1;
+                    }
+
+                    if (resta > tolerancia)
+                    {
+                        ban = false;
+                    }
                 }
+            }
+
+            for (int i = 0; i < incognita; i++)
+            {
+                resultado[i] = vector[i];
             }
 
             return resultado;
