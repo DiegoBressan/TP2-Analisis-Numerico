@@ -37,7 +37,7 @@ namespace Logica
                 }
             }
 
-            for (int i = 0; i <= incognita - 1; i++)
+            for (int i = 0; i < incognita; i++)
             {
                 Resultado[i] = matrizcargada[i, incognita];
             }
@@ -66,25 +66,22 @@ namespace Logica
 
                     for (int j = 0; j < incognita - 1; j++)
                     {
-                        if (j == i) continue;
-                        suma += matrizcargada[i, j] * vector[j];
+                        if (j != i) 
+                        {
+                            suma += matrizcargada[i, j] * vector[j];
+                        }
                     }
 
-                    vector[i] = (matrizcargada[i, incognita - 1] - suma) / matrizcargada[i, i];
+                    vector[i] = (matrizcargada[i, incognita] - suma) / matrizcargada[i, i];
                 }
 
                 ban = true;
 
                 for (int i = 0; i < incognita - 1; i++)
                 {
-                    double resta = vector[i] - vectorant[i];
+                    double error = Math.Abs(vector[i] - vectorant[i]);
 
-                    if (resta < 0)
-                    {
-                        resta = resta * -1;
-                    }
-
-                    if (resta > tolerancia)
+                    if (error > tolerancia)
                     {
                         ban = false;
                     }
