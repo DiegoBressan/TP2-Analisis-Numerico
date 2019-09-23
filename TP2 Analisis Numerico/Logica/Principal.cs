@@ -11,7 +11,6 @@ namespace Logica
         //GAUSS-JORDAN
         public double[] ObtenerGaussJordan(double[,] matrizcargada, int incognita)
         {
-            double[,] matrizaux = matrizcargada;
             double[] Resultado = new double[incognita];
             double coeficiente = 0;
 
@@ -21,17 +20,18 @@ namespace Logica
 
                 for (int y = 0; y <= incognita; y++)
                 {
-                    matrizaux[x, y] = matrizaux[x, y] / coeficiente;
+                    matrizcargada[x, y] = matrizcargada[x, y] / coeficiente;
                 }
 
                 for (int z = 0; z <= incognita - 1; z++)
                 {
                     if (x != z)
                     {
-                        coeficiente = matrizaux[z, x];
+                        coeficiente = matrizcargada[z, x];
+
                         for (int t = 0; t <= incognita; t++)
                         {
-                            matrizaux[z, t] = matrizcargada[z, t] - (coeficiente * matrizcargada[x, t]);
+                            matrizcargada[z, t] = matrizcargada[z, t] - (coeficiente * matrizcargada[x, t]);
                         }
                     }
                 }
@@ -39,7 +39,7 @@ namespace Logica
 
             for (int i = 0; i <= incognita - 1; i++)
             {
-                Resultado[i] = matrizaux[i, incognita];
+                Resultado[i] = matrizcargada[i, incognita];
             }
 
             return Resultado;
@@ -55,7 +55,7 @@ namespace Logica
             int cont = 0;
             double tolerancia = 0.0001;
             
-            while (ban == false && cont < 100)
+            while (ban == false && cont <= 100)
             {
                 cont += 1;
 
