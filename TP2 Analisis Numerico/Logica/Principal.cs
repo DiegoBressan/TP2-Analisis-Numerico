@@ -59,12 +59,12 @@ namespace Logica
             {
                 cont += 1;
 
-                for (int i = 0; i < incognita; i++)
+                for (int i = 0; i <= incognita - 1; i++)
                 {
                     double suma = 0;
                     vectorant[i] = vector[i];
 
-                    for (int j = 0; j < incognita - 1; j++)
+                    for (int j = 0; j <= incognita - 1; j++)
                     {
                         if (j != i) 
                         {
@@ -77,7 +77,7 @@ namespace Logica
 
                 ban = true;
 
-                for (int i = 0; i < incognita - 1; i++)
+                for (int i = 0; i <= incognita - 1; i++)
                 {
                     double error = Math.Abs(vector[i] - vectorant[i]);
 
@@ -88,7 +88,7 @@ namespace Logica
                 }
             }
 
-            for (int i = 0; i < incognita; i++)
+            for (int i = 0; i <= incognita - 1; i++)
             {
                 resultado[i] = vector[i];
             }
